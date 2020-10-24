@@ -471,25 +471,25 @@ header(quiet)
 
 # in-dir usable?
 if nil == in_dir
-    $stderr.puts 'No in-dir supplied.'
+    $stderr.puts 'Error: No in-dir supplied.'
     exit 10
 elsif not FileTest.directory?(in_dir)
-    $stderr.puts 'The supplied in-dir is not a directory.'
+    $stderr.puts 'Error: The supplied in-dir is not a directory.'
     exit 11
 elsif not FileTest.readable?(in_dir)
-    $stderr.puts 'The supplied in-dir is not readable.'
+    $stderr.puts 'Error: The supplied in-dir is not readable.'
     exit 12
 end
 
 # out-dir usable?
 if nil == out_dir
-    $stderr.puts 'No out-dir supplied.'
+    $stderr.puts 'Error: No out-dir supplied.'
     exit 15
 elsif not FileTest.directory?(out_dir)
-    $stderr.puts 'The supplied out-dir is not a directory.'
+    $stderr.puts 'Error: The supplied out-dir is not a directory.'
     exit 16
 elsif not FileTest.writable?(out_dir)
-    $stderr.puts 'The supplied out-dir is not writable.'
+    $stderr.puts 'Error: The supplied out-dir is not writable.'
     exit 17
 end
 
@@ -513,7 +513,7 @@ end
 
 # non-equal pre-/suffixes?
 if im_prefix == tn_prefix and im_suffix == tn_suffix
-    $stderr.puts '{im,tn}-prefix and {im,tn}-suffix are equal.'
+    $stderr.puts 'Error: {im,tn}-prefix and {im,tn}-suffix are equal.'
     exit 20
 end
 
