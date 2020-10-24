@@ -1,6 +1,10 @@
 Changelog for picconv
 =====================
 
+1.9.6.1 (2020-Oct-24)
+    * Typo fix and general 'Error: ' prefix for error messages.
+    * Fixed wrong DTD URL in HTML output.
+
 1.9.6 (2012-Dec-13)
     * Files containing spaces in the name were not processed. Fixed.
     * Images are now sorted based on their filename before being processed.
