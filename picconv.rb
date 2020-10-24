@@ -617,7 +617,7 @@ filename  = "#{out_dir}/#{gal_file}".squeeze('/')
 puts 'Creating HTML file...' unless quiet
 fh = File.new(filename, 'w')
 fh.puts '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" ' \
-    '"http://www.w3.org/TR/html4/looses.dtd">'
+    '"http://www.w3.org/TR/html4/loose.dtd">'
 fh.puts '<html>'
 fh.puts '<head>'
 fh.puts '<meta http-equiv="Content-Type" content="text/html; ' \
