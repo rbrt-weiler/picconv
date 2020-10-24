@@ -3,13 +3,14 @@
 
 #
 # picconv - a script for creating HTML thumbnail galleries.
-# (c) 2003-2005,2006,2007,2012 Robert Weiler <http://robwei.de/>
-# <http://digigeek.net/projects/picconv/>
+# (c) 2003-2007,2012,2020 Robert Weiler <https://robert.weiler.one/>
+# <https://gitlab.com/rbrt-weiler/picconv>
 #
 
 require 'getoptlong'
 
 PICCONV_VERSION = '1.9.6'
+PICCONV_URL = 'https://gitlab.com/rbrt-weiler/picconv'
 
 #==========================================================================
 # Preparations: Some functions.
@@ -20,8 +21,8 @@ def header(quiet = false)
     unless quiet
         puts "picconv #{PICCONV_VERSION} - a script for creating HTML " \
             'thumbnail galleries.'
-        puts '(c) 2003-2005,2006,2007,2012 Robert Weiler <http://robwei.de/>'
-        puts 'Latest version: <http://digigeek.net/projects/picconv/>'
+        puts '(c) 2003-2007,2012,2020 Robert Weiler <https://robert.weiler.one/>'
+        puts "Latest version: <#{PICCONV_URL}>"
         puts
         puts 'This script is provided as-is without any guarantee of any ' \
             'kind. Refer to the'
@@ -623,7 +624,7 @@ fh.puts '<meta http-equiv="Content-Type" content="text/html; ' \
     'charset=ISO-8859-1">'
 fh.puts "<title>#{gal_title}</title>"
 fh.puts "<meta name=\"generator\" content=\"picconv #{PICCONV_VERSION}, " \
-    'http://digigeek.net/projects/picconv/">'
+    "#{PICCONV_URL}\">"
 fh.puts '<meta name="robots" content="noindex,noarchive,follow">'
 fh.puts '<style type="text/css">'
 fh.puts 'h1 { font-size: x-large; }'
@@ -671,7 +672,7 @@ if 0 != pprow
 end
 fh.puts "</table>"
 fh.puts '<p align="center" style="font-size: x-small;">Gallery created with ' \
-    '<a href="http://digigeek.net/projects/picconv/">picconv</a>.</p>'
+    "<a href=\"#{PICCONV_URL}\">picconv</a>.</p>"
 fh.puts "</body>"
 fh.puts "</html>"
 fh.close()
