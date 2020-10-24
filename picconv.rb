@@ -513,7 +513,7 @@ end
 
 # non-equal pre-/suffixes?
 if im_prefix == tn_prefix and im_suffix == tn_suffix
-    $stderr.puts '{im,tn}-prefix and {im,tn}-prefix are equal.'
+    $stderr.puts '{im,tn}-prefix and {im,tn}-suffix are equal.'
     exit 20
 end
 
