@@ -1,0 +1,53 @@
+picconv - a script for creating HTML thumbnail galleries.
+(c) 2003-2005,2006,2007,2012 Robert Weiler <http://robwei.de/>
+<http://digigeek.net/projects/picconv/>
+
+
+
+LICENSE
+=======
+
+picconv is released under the MIT license. Please see the file <LICENSE> for
+details. If that file is missing please review the online version [1].
+
+[1]: <http://opensource.org/licenses/mit-license.php>
+
+
+REQUIREMENTS
+============
+
+For running picconv you need a Ruby interpreter [2], the standard UNIX tool
+"file" and the tool "convert" from the ImageMagick [3] package.
+If you want to use the option "--use-exif" you'll also need the tools
+"exif" [4] and "grep".
+
+[2]: <http://www.ruby-lang.org/>
+[3]: <http://imagemagick.org/>
+[4]: <http://sourceforge.net/projects/libexif/>
+
+
+TODO
+====
+
+- Clean up code. For example there is no need to set default values in the
+  ImageHandle class AND in the main program.
+- Extend the ImageHandle class. Add some methods for setting single class
+  variables. This can be used to clean up the code (directly set a single
+  class variable if a matching argument is found).
+
+
+BUGS
+====
+
+There are no known bugs. If you find one please drop me a line at
+<rw AT digigeek DOT net> describing the bug. Patches are also appreciated.
+
+
+NOTES
+=====
+
+picconv was written under Linux and only tested under Linux. gVim [5] was used
+for editing.
+
+[5]: <http://www.vim.org/>
+

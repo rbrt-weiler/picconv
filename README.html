@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>picconv : Projects : digiGeek.net</title>
+        <meta name="author" content="Robert Weiler" />
+        <meta name="owner" content="Robert Weiler" />
+        <meta name="publisher" content="Robert Weiler" />
+        <meta name="copyright" content="(c) 2003-2005,2006,2007,2012 Robert Weiler" />
+        <meta name="language" content="en" />
+        <meta name="robots" content="index,follow,noarchive" />
+        <meta name="revisit-after" content="14 days" />
+        <meta name="keywords" content="jpeg, jpg, image, images, photo, photos, resize, resizing, thumbnail, thumbnails, gallery, galleries, web, ruby" />
+        <meta name="description" content="picconv is a script for creating HTML thumbnail galleries, written in Ruby." />
+    </head>
+    <body>
+        <h1>picconv</h1>
+        <p>picconv is a script for creating HTML thumbnail galleries, written in Ruby.</p>
+        <h2>Description</h2>
+        <p>picconv can be used to create a HTML thumbnail gallery out of a directory containing images of any type. You only have to provide an input and an output directory, while picconv takes care of everything else. However, you may provide more options to get a customized output.</p>
+        <h2>Requirements</h2>
+        <p>picconv requires a Ruby interpreter, the standard UNIX tool <var>file</var> and the tool <var>convert</var> from the ImageMagick package. If you want to use the option <var>--use-exif</var> you need the program <var>exif</var>.</p>
+        <p>picconv was tested with Ruby 1.8 under Linux only.</p>
+        <h2>Options</h2>
+        <table class="options" border="1" cellspacing="0" cellpadding="4" summary="Options">
+            <tr>
+                <th colspan="2">Argument types</th>
+            </tr>
+            <tr>
+                <td>STRING</td>
+                <td>A free-form string. May be surrounded by <var>'</var> or <var>"</var>.</td>
+            </tr>
+            <tr>
+                <td>INT</td>
+                <td>An integer value.</td>
+            </tr>
+            <tr>
+                <td>DIR</td>
+                <td>Like STRING, but represents an exisiting directory.</td>
+            </tr>
+            <tr>
+                <td>SIZE</td>
+                <td>A string in the form <var>INTxINT</var>, i.e. <var>500x500</var>.</td>
+            </tr>
+            <tr>
+                <td>HEXCOL</td>
+                <td>A hexadecimal color value, i.e. <var>#123456</var> or <var>#abcdef</var>.</td>
+            </tr>
+            <tr>
+                <th colspan="2">Required arguments</th>
+            </tr>
+            <tr>
+                <td>--in-dir DIR</td>
+                <td>Directory where the original images reside.</td>
+            </tr>
+            <tr>
+                <td>--out-dir DIR</td>
+                <td>Output directory for newly created files.</td>
+            </tr>
+            <tr>
+                <th colspan="2">Optional arguments</th>
+            </tr>
+            <tr>
+                <td>--im-size SIZE</td>
+                <td>Size for newly created fullsize images. Default: <var>640x640</var>.</td>
+            </tr>
+            <tr>
+                <td>--im-qual INT</td>
+                <td>Quality for newly created fullsize images. Default: <var>80</var>.</td>
+            </tr>
+            <tr>
+                <td>--im-prefix STRING</td>
+                <td>Prefix for newly created fullsize images. Default: [empty].</td>
+            </tr>
+            <tr>
+                <td>--im-suffix STRING</td>
+                <td>Suffix for newly created fullsize images. Default: [empty].</td>
+            </tr>
+            <tr>
+                <td>--tn-size SIZE</td>
+                <td>Size for newly created thumbnail images. Default: <var>0</var> (no thumbnails are created).</td>
+            </tr>
+            <tr>
+                <td>--tn-qual INT</td>
+                <td>Quality for newly created thumbnail images. Default: <var>40</var>.</td>
+            </tr>
+            <tr>
+                <td>--tn-prefix STRING</td>
+                <td>Prefix for newly created thumbnail images. Default: <var>tn_</var>.</td>
+            </tr>
+            <tr>
+                <td>--tn-suffix STRING</td>
+                <td>Suffix for newly created thumbnail images. Default: [empty].</td>
+            </tr>
+            <tr>
+                <td>--gal-file STRING</td>
+                <td>Filename for the HTML file. Default: <var>index.html</var>.</td>
+            </tr>
+            <tr>
+                <td>--gal-title STRING</td>
+                <td>Title for the HTML gallery. Default: <var>HTML Thumbnail Gallery</var>.</td>
+            </tr>
+            <tr>
+                <td>--gal-desc STRING</td>
+                <td>Description for the gallery. Will be enclosed by p tags. Default: [empty].</td>
+            </tr>
+            <tr>
+                <td>--gal-pprow INT</td>
+                <td>Pictures per row in the HTML gallery. Default: <var>5</var>.</td>
+            </tr>
+            <tr>
+                <td>--gal-gzip INT</td>
+                <td>Defines if the gallery file should be compressed. Default: <var>0</var>, interpreted as uncompressed. Other allowed values are <var>1</var> (compressed) and <var>2</var> (compressed and uncompressed).</td>
+            </tr>
+            <tr>
+                <td>--col-bg HEXCOL</td>
+                <td>Specifies the background color. Default: <var>#cccccc</var>.</td>
+            </tr>
+            <tr>
+                <td>--col-text HEXCOL</td>
+                <td>Specifies the text color. Default: <var>#000000</var>.</td>
+            </tr>
+            <tr>
+                <td>--col-link HEXCOL</td>
+                <td>Specifies the color of unvisited links. Default: <var>#0000ff</var>.</td>
+            </tr>
+            <tr>
+                <td>--col-alink HEXCOL</td>
+                <td>Specifies the color of active links. Default: <var>#ff0000</var>.</td>
+            </tr>
+            <tr>
+                <td>--col-vlink HEXCOL</td>
+                <td>Specifies the color of visited links. Default: <var>#990099</var>.</td>
+            </tr>
+            <tr>
+                <td>--comment STRING</td>
+                <td>Adds the given string to the comment field in the image.</td>
+            </tr>
+            <tr>
+                <td>--interlace</td>
+                <td>Creates interlaced images.</td>
+            </tr>
+            <tr>
+                <td>--use-exif</td>
+                <td>Fetches EXIF datetime information and displays it in the gallery.</td>
+            </tr>
+            <tr>
+                <td>--use-names</td>
+                <td>Use original names for newly created images instead of numbering.</td>
+            </tr>
+            <tr>
+                <td>--no-convert</td>
+                <td>Disables conversion of original images.</td>
+            </tr>
+            <tr>
+                <td>--conv-opts</td>
+                <td>Additional options for <var>convert</var>.</td>
+            </tr>
+            <tr>
+                <td>--conv-opts-fs</td>
+                <td>Additional options for <var>convert</var> (fullsize images only).</td>
+            </tr>
+            <tr>
+                <td>--conv-opts-tn</td>
+                <td>Additional options for <var>convert</var> (fullsize images only).</td>
+            </tr>
+            <tr>
+                <td>--quiet</td>
+                <td>Surpresses all messages going to STDOUT.</td>
+            </tr>
+        </table>
+        <h2>Notes</h2>
+        <p>picconv does overwrite files in <var>out-dir</var>.</p>
+        <h2>License</h2>
+        <p>picconv is released under the MIT license. See the file LICENSE included in the archive for details.</p>
+        <h2>Copyright</h2>
+        <p>picconv is (c) 2003-2005,2006,2007,2012 <a href="http://robwei.de/" title="visit Roberts personal homepage">Robert Weiler</a>.</p>
+        <h2>See also</h2>
+        <ul>
+            <li><a href="http://www.ruby-lang.org/">Ruby Language Home Page</a></li>
+            <li><a href="http://www.imagemagick.org/">ImageMagick Home Page</a></li>
+            <li><a href="http://sourceforge.net/projects/libexif/">libexif Project Page</a></li>
+        </ul>
+        <hr />
+        <p style="text-align: center;">a <a href="http://digigeek.net/">digiGeek.net</a> project</p>
+    </body>
+</html>

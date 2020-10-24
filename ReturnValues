@@ -1,0 +1,13 @@
+Return values for picconv
+=========================
+
+0     Script finished without any errors.
+1     Usage message shown.
+10    No in-dir supplied.
+11    in-dir is not a directory.
+12    in-dir is not readable.
+15    No out-dir supplied.
+16    out-dir is not a directory.
+17    out-dir is not writable.
+20    Equal prefixes / suffixes.
+255   An unknown / undefined error occured.

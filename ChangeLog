@@ -1,0 +1,98 @@
+Changelog for picconv
+=====================
+
+1.9.6 (2012-Dec-13)
+    * Files containing spaces in the name were not processed. Fixed.
+    * Images are now sorted based on their filename before being processed.
+
+1.9.5.2 (2007-Jan-04)
+    * Never release untested code. EXIF information now shows up again.
+    * Minor changes
+
+1.9.5.1 (2007-Jan-03)
+    * Fixed a small bug concerning the fetching of EXIF information.
+
+1.9.5 (2006-Oct-03)
+    * Introduced a class for image handling.
+    * Minor changes.
+
+1.9.4 (2006-Oct-03)
+    + Added aliases "--interlaced" and "--progressive".
+    * Improved the usage message.
+
+1.9.3 (2006-Sep-20)
+    * The option "--use-exif" now works.
+
+1.9.2 (2006-Aug-05)
+    + Added options "--conv-opts", "--conv-opts-fs" and "--conv-opts-tn".
+
+1.9.1 (2006-Apr-23)
+    + Added option "--gal-desc".
+
+1.9.0 (2006-Apr-22)
+    * Rewrite of picconv. Ported from Perl to Ruby.
+    * Requirements changed. See file "README".
+    * New return values. See file "ReturnValues".
+    * No longer restricted to JPEG files.
+    * Some parameters have been changed. See usage message.
+    - Some parameters have been dropped. See usage message.
+    ! "--use-exif" has no effect.
+
+1.0.13
+    * Changed ad URLs to point to current website.
+
+1.0.12
+    + Added option "--comment".
+
+1.0.11
+    * Fixed a bug with the "--use-exif" option.
+    + EXIF previews are now removed from output images when "--use-exif" is
+      used.
+
+1.0.10
+    * Changed the EXIF tag that is used for fetching datetime information.
+    + Added option "--gal-gzip".
+
+1.0.9
+    * Changed the way directories and filenames have to be passed to the
+      script. See "picconv.pl --help".
+
+1.0.8
+    + Added aliases "--im-size" and "--tn-size".
+    + Added option "--quiet".
+
+1.0.7
+    * Changed the way directories have to be passed to the script. See
+      "picconv.pl --help".
+    + Added option "--use-names".
+
+1.0.6
+    * Code reformatted.
+    + Added options "--uname", "--ugroup" and "--permissions".
+    + Added options "--progressive" and "--interlace".
+
+1.0.5
+    * Minor changes.
+    + Added option "--usage" as an alias for "--help".
+    + The script now supports return values to distinguish between errors
+      that may occur. See the file "ReturnValues".
+
+1.0.4
+    + Added option "--no-convert".
+
+1.0.3
+    * Updated the usage message, it now tells the default values for all
+      options.
+    + Added options "--im-prefix", "--im-suffix", "--tn-prefix" and
+      "--tn-suffix".
+
+1.0.2
+    * Fixed a bug with the "--gal-title" option.
+    * Calling the script without parameters no longer results in an
+      automatic conversion of the JPEGs in the current directory.
+
+1.0.1
+    + Added option "--use-exif". Needs the program "exif".
+
+1.0.0
+    * Initial release.
