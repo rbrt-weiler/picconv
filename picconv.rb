@@ -9,7 +9,7 @@
 
 require 'getoptlong'
 
-PICCONV_VERSION = '1.9.6'
+PICCONV_VERSION = '1.9.6.1'
 PICCONV_URL = 'https://gitlab.com/rbrt-weiler/picconv'
 
 #==========================================================================
